@@ -1,0 +1,57 @@
+name: Snyk Security Scan (Maven + Code)
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+  security-events: write
+
+jobs:
+  snyk:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17' # Cambia si usas otra versión
+
+      - name: Build project with Maven
+        run: mvn -B package --file pom.xml
+
+      # 🧩 Análisis de dependencias (SCA)
+      - name: Run Snyk Open Source (Maven dependencies)
+        uses: snyk/actions/maven@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          args: --sarif-file-output=snyk-deps.sarif
+
+      - name: Upload Snyk dependency results to GitHub Code Scanning
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: snyk-deps.sarif
+
+      # 🔍 Análisis de código (SAST)
+      - name: Install Snyk CLI
+        uses: snyk/actions/setup@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+
+      - name: Run Snyk Code (SAST)
+        run: snyk code test --sarif > snyk-code.sarif || true
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+
+      - name: Upload Snyk Code results to GitHub Code Scanning
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: snyk-code.sarif
