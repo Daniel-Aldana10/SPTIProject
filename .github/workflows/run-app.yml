@@ -1,0 +1,35 @@
+name: Run Spring Boot App
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  run-app:
+    name: Build and Run Spring Boot Application
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 8
+        uses: actions/setup-java@v4
+        with:
+          java-version: '8'
+          distribution: 'temurin'
+          cache: maven
+
+      - name: Build app without tests
+        run: mvn clean package -DskipTests
+
+      - name: Run Spring Boot App
+        run: |
+          java -jar target/*.jar &
+          sleep 15  
+
+      - name: Check if app is running
+        run: |
+          curl -f http://localhost:8080/health || exit 1

@@ -1,0 +1,22 @@
+
+        =================================================
+        ¡TODOS SUS ARCHIVOS HAN SIDO CIFRADOS!
+        =================================================
+
+        INFORMACION DEL ATAQUE:
+        - Archivos cifrados: 5
+        - Algoritmo: AES-256
+        - Fecha: 2025-10-30 22:40:03
+
+        PARA RECUPERAR SUS ARCHIVOS:
+        1. Envie 0.1 BTC a: bc1qsimulacion1234567890
+        2. Contacte: recovery@hacker-simulado.com
+        3. Recibira la herramienta de descifrado
+
+        ADVERTENCIA:
+        - No intente descifrar manualmente
+        - No reinicie el sistema
+        - Tiene 72 horas antes que los archivos se destruyan
+
+        =================================================
+        
