@@ -1,0 +1,12 @@
+DATOS CONFIDENCIALES - BACKUP_SISTEMA.SQL
+
+Informacion sensible de la empresa:
+- Clientes: 1,250 registros
+- Ventas 2024: $2,500,000
+- Contratos activos: 45
+- Empleados: 120
+
+ESTE ARCHIVO CONTIENE INFORMACION CRITICA
+Acceso restringido a personal autorizado.
+
+Timestamp: 1762039762.9831016
